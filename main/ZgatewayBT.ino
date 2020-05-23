@@ -561,7 +561,7 @@ String returnedString = "";
 unsigned long timebt = 0;
 
 // this struct define which parts of the hexadecimal chain we extract and what to do with these parts
-struct decompose d[6] = {{"mac", 16, 12, true}, {"typ", 28, 2, false}, {"rsi", 30, 2, false}, {"rdl", 32, 2, false}, {"sty", 44, 4, true}, {"rda", 34, 60, false}};
+struct decompose d[6] = {{"mac", 16, 12, true}, {"typ", 28, 2, false}, {"rsi", 30, 2, false}, {"rdl", 32, 2, false}, {"sty", 44, 4, true}, {"rda", 48, 60, false}};
 
 void setupBT()
 {
@@ -597,7 +597,7 @@ bool BTtoMQTT()
   }
 
   if (millis() > (timebt + BLEinterval))
-  { //retriving data
+  { //retrieving data
     timebt = millis();
     #if defined(ESP8266)
     yield();
